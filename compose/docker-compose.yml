@@ -114,5 +114,3 @@ services:
       - TEMPORAL_ADDRESS=temporal:7233
       - TEMPORAL_CORS_ORIGINS=http://localhost:3000
     image: temporalio/ui:2.49.1
-    ports:
-      - 8080:8080

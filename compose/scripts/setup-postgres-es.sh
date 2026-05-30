@@ -24,6 +24,7 @@ temporal-sql-tool --plugin postgres12 --ep ${POSTGRES_SEEDS} -u ${POSTGRES_USER}
 # Setup Elasticsearch index
 # temporal-elasticsearch-tool is available in v1.30+ server releases
 if [ -x /usr/local/bin/temporal-elasticsearch-tool ]; then
+  sleep 15
   echo 'Using temporal-elasticsearch-tool for Elasticsearch setup'
   temporal-elasticsearch-tool --ep "$ES_SCHEME://$ES_HOST:$ES_PORT" setup-schema
   temporal-elasticsearch-tool --ep "$ES_SCHEME://$ES_HOST:$ES_PORT" create-index --index $ES_VISIBILITY_INDEX
